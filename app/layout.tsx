@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/app/styles/globals.css";
 import Header from "@/app/components/layout/Header";
+import Footer from "@/app/components/layout/Footer";
 
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
           <main>
           {children}
           </main>
+        <Footer />
       </body>
     </html>
   );
