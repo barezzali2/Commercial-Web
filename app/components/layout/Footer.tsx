@@ -9,6 +9,7 @@ type SocialType = {
   href?: string
 }
 
+// Icon collection
 const socialIcons: SocialType[] = [
   {
     icon: <FaTwitter />
@@ -32,18 +33,23 @@ const socialIcons: SocialType[] = [
 
 function Footer() {
   return (
-    <div className='bg-black text-white p-8'>
-      <Logo />
-      <p className='text-balance text-[#BCBCBC] mt-10 pr-2'>Effortlessly turn your ideas into a fully functional, responsive, no-code SaaS website.</p>
+    <div className='overflow-hidden bg-black text-white p-8 md:flex md:flex-row md:pr-20'>
 
-      <div className='flex items-center gap-5 mt-10'>
-        {socialIcons.map((icon: SocialType, i: number) => (
-          <a href='#' key={i} className='text-2xl text-[#808080]'>{icon.icon}</a>
-        ))}
+      {/* Logo and social media icon stuff */}
+      <div>
+        <Logo />
+        <p className='text-balance text-[#BCBCBC] mt-10 pr-2 md:mr-15'>Effortlessly turn your ideas into a fully functional, responsive, no-code SaaS website.</p>
+        <div className='flex items-center gap-5 mt-10 md:mt-18'>
+          {socialIcons.map((icon: SocialType, i: number) => (
+            <a href='#' key={i} className='text-2xl text-[#808080]'>{icon.icon}</a>
+          ))}
+        </div>
       </div>
 
-      <div className='text-[#7B7B7B] mt-15'>
-        <div className='flex flex-col gap-4'>
+
+      {/* Links */}
+      <div className='text-[#7B7B7B] mt-15 md:grid md:grid-cols-4 md:mt-0 md:gap-35'>
+        <div className='flex flex-col gap-4 text-sm'>
           <h3 className='text-white'>Product</h3>
           <Link href="#">Features</Link>
           <Link href="#">Integrations</Link>
@@ -52,7 +58,7 @@ function Footer() {
           <Link href="#">Pricing</Link>
         </div>
 
-        <div className='flex flex-col gap-4 mt-10'>
+        <div className='flex flex-col gap-4 mt-10 md:mt-0 text-sm'>
           <h3 className='text-white'>Company</h3>
           <Link href="#">About</Link>
           <Link href="#">Blog</Link>
@@ -62,7 +68,7 @@ function Footer() {
           <Link href="#">Contact</Link>
         </div>
 
-        <div className='flex flex-col gap-4 mt-10'>
+        <div className='flex flex-col gap-4 mt-10 md:mt-0 text-sm'>
           <h3 className='text-white'>Resources</h3>
           <Link href="#">Examples</Link>
           <Link href="#">Community</Link>
@@ -70,13 +76,14 @@ function Footer() {
           <Link href="#">Docs</Link>
         </div>
 
-        <div className='flex flex-col gap-4 mt-10'>
+        <div className='flex flex-col gap-4 mt-10 md:mt-0 text-sm'>
           <h3 className='text-white'>Legal</h3>
           <Link href="#">Privacy</Link>
           <Link href="#">Terms</Link>
           <Link href="#">Security</Link>
         </div>
       </div>
+
     </div>
   )
 }
