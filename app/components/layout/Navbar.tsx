@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import React, { useState } from 'react'
 import { IoClose } from "react-icons/io5";
+import NavButton from '@/app/components/ui/NavButton';
 
 function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -13,10 +14,62 @@ function Navbar() {
    
   return (
     <div className='flex items-center'>
+
+      <div className='hidden md:flex md:gap-3'>
+        <ul className='flex flex-row list-none gap-7 mx-10 items-center'>
+            <li>
+              <Link 
+                href="/"
+                className="text-md text-[#00000099] transition-colors hover:text-indigo-700 block py-2"
+                onClick={handleSetMenu}
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/"
+                className="text-md text-[#00000099] transition-colors hover:text-indigo-700 block py-2"
+                onClick={handleSetMenu}
+              >
+                Features
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/"
+                className="text-md text-[#00000099] transition-colors hover:text-indigo-700 block py-2"
+                onClick={handleSetMenu}
+              >
+                Customers
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/"
+                className="text-md text-[#00000099] transition-colors hover:text-indigo-700 block py-2"
+                onClick={handleSetMenu}
+              >
+                Updates
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/"
+                className="text-md text-[#00000099] transition-colors hover:text-indigo-700 block py-2"
+                onClick={handleSetMenu}
+              >
+                Help
+              </Link>
+            </li>
+          </ul>
+
+                    <NavButton href='#' className='text-white bg-black inline pt-[10px] pl-[15px] pr-[15px] pb-[10px] rounded-[10px] mr-5'>Get for free</NavButton>
+      </div>
    
       <div
         onClick={handleSetMenu}
-        className="relative w-[30px] h-[25px] flex flex-col justify-center items-center cursor-pointer z-[1002]"
+        className="relative w-[30px] h-[25px] flex flex-col justify-center items-center cursor-pointer z-[1002] md:hidden"
       >
         {/* Top Bar */}
         <span
@@ -44,14 +97,13 @@ function Navbar() {
       {/* Mobile Menu Overlay */}
       {menuOpen && (
         <div 
-          className="fixed inset-0 bg-black/30 z-[1001]"
+          className="fixed inset-0 bg-black/30 z-[1001] md:hidden"
           onClick={handleSetMenu}
         ></div>
       )}
 
 
-
-      <div className={`fixed top-0 right-0 h-full w-4/5 max-w-sm bg-[#EAEEFE] shadow-lg z-[1002] transition-transform duration-300 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`fixed top-0 right-0 h-full w-4/5 max-w-sm bg-[#EAEEFE] shadow-lg z-[1002] transition-transform duration-300 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
         <div className="p-7 h-full flex flex-col">
             
           <div className="flex justify-end mb-20 mt-10">
@@ -65,50 +117,49 @@ function Navbar() {
                 className="text-xl font-semibold text-black transition-colors hover:text-blue-600 block py-2"
                 onClick={handleSetMenu}
               >
-                HOME
+                About
               </Link>
             </li>
             <li>
               <Link 
-                href="/services"
+                href="/"
                 className="text-xl font-semibold text-black transition-colors hover:text-blue-600 block py-2"
                 onClick={handleSetMenu}
               >
-                SERVICES
+                Features
               </Link>
             </li>
             <li>
               <Link 
-                href="/projects"
+                href="/"
                 className="text-xl font-semibold text-black transition-colors hover:text-blue-600 block py-2"
                 onClick={handleSetMenu}
               >
-                PROJECTS
+                Customers
               </Link>
             </li>
             <li>
               <Link 
-                href="/about"
+                href="/"
                 className="text-xl font-semibold text-black transition-colors hover:text-blue-600 block py-2"
                 onClick={handleSetMenu}
               >
-                ABOUT US
+                Updates
               </Link>
             </li>
             <li>
               <Link 
-                href="/contact"
+                href="/"
                 className="text-xl font-semibold text-black transition-colors hover:text-blue-600 block py-2"
                 onClick={handleSetMenu}
               >
-                CONTACT
+                Help
               </Link>
             </li>
           </ul>
-          
         </div>
-        
       </div>
+
     </div>
   )
 }
