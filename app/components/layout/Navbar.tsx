@@ -15,6 +15,8 @@ function Navbar() {
   return (
     <div className='flex items-center'>
 
+
+      {/* Large screen navbar links */}
       <div className='hidden md:flex md:gap-3'>
         <ul className='flex flex-row list-none gap-7 mx-10 items-center'>
             <li>
@@ -64,9 +66,11 @@ function Navbar() {
             </li>
           </ul>
 
-                    <NavButton href='#' className='text-white bg-black inline pt-[10px] pl-[15px] pr-[15px] pb-[10px] rounded-[10px] mr-5'>Get for free</NavButton>
+          <NavButton href='#' className='text-white bg-black inline pt-[10px] pl-[15px] pr-[15px] pb-[10px] rounded-[10px] mr-5'>Get for free</NavButton>
       </div>
-   
+
+
+      {/* Hamberger button for mobile viewport */}
       <div
         onClick={handleSetMenu}
         className="relative w-[30px] h-[25px] flex flex-col justify-center items-center cursor-pointer z-[1002] md:hidden"
@@ -93,7 +97,6 @@ function Navbar() {
 
 
 
-
       {/* Mobile Menu Overlay */}
       {menuOpen && (
         <div 
@@ -103,6 +106,7 @@ function Navbar() {
       )}
 
 
+      {/* Mobile navbar links */}
       <div className={`fixed top-0 right-0 h-full w-4/5 max-w-sm bg-[#EAEEFE] shadow-lg z-[1002] transition-transform duration-300 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
         <div className="p-7 h-full flex flex-col">
             
