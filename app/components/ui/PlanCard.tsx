@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from './Button';
+import NavButton from './NavButton';
 
 type PlanCardProps = {
     title: string;
@@ -12,7 +12,7 @@ type PlanCardProps = {
 
 function PlanCard({ title, price, period = "monthly", features, popular, buttonText}: PlanCardProps) {
   return (
-    <div className={`rounded-2xl m-5 mx-auto w-[370px] p-12 flex flex-col gap-4 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] ${popular ? "bg-black text-white" : "bg-white text-black"}`}>
+    <div className={`rounded-2xl my-5 mx-auto w-[320px] p-12 flex flex-col gap-4 shadow-[0_3px_10px_-2px_rgba(0,0,0,0.2)] ${popular ? "bg-black text-white" : "bg-white text-black"} lg:h-fit`}>
         <div>
             <div className='flex flex-row justify-between items-center'>
             <h3 className='text-[#6F6C90] text-xl'>{title}</h3>
@@ -28,13 +28,15 @@ function PlanCard({ title, price, period = "monthly", features, popular, buttonT
             )}
             </div>
             
-            <p className='mt-5 text-4xl'>
+            <p className='mt-5 text-4xl font-semibold'>
                 {price}
                 <span className='text-xl text-[#6F6C90]'>/{period}</span>
             </p>
         </div>
 
-        <Button className={`mt-5 mb-5 mx-auto rounded-md ${popular ? "bg-white text-black" : "bg-black text-white"} p-2 pr-12 pl-12`}>{buttonText}</Button>
+        <NavButton href='#' className={`mt-5 mb-5 mx-auto rounded-xl ${popular ? "bg-white text-black" : "bg-black text-white"} py-[10px] px-[20px]`}>
+            {buttonText}
+        </NavButton>
 
         <ul className='flex flex-col gap-6'>
             {features.map((feature, index) => (

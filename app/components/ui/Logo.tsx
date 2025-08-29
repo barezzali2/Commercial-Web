@@ -6,7 +6,7 @@ import Link from 'next/link';
 function Logo() {
   return (
     <Link href='/'>
-        <Image src={logo} alt='Logo' quality={80}/>
+        <Image src={logo} alt='Logo' quality={80} className=''/>
     </Link>
   )
 }

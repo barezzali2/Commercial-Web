@@ -3,15 +3,17 @@ import { FaArrowRight } from 'react-icons/fa';
 
 type LinkType = {
     children: ReactNode;
-    className?: string
+    className?: string;
+    href: string
+
 }
 
-function LearnMoreLink({ children }: LinkType) {
+function TextLink({ children, href }: LinkType) {
   return (
-    <a href='#'>
+    <a href={href}>
         {children} <FaArrowRight className='inline'/>
     </a>
   )
 }
 
-export default LearnMoreLink
+export default TextLink
