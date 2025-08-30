@@ -31,14 +31,14 @@ const socialIcons: SocialType[] = [
   },
 ]
 
-function Footer() {
+export default function Footer() {
   return (
-    <div className='overflow-hidden bg-black text-white p-8 md:flex md:flex-row md:pr-20'>
+    <div className='overflow-hidden bg-black text-white p-8 md:flex md:flex-row md:pr-5 lg:pr-5 lg:justify-between lg:py-10'>
 
       {/* Logo and social media icon stuff */}
       <div>
         <Logo />
-        <p className='text-balance text-[#BCBCBC] mt-10 pr-2 md:mr-15'>Effortlessly turn your ideas into a fully functional, responsive, no-code SaaS website.</p>
+        <p className='max-w-80 font-normal text-balance text-[#BCBCBC] mt-10 md:text-[15px]'>Effortlessly turn your ideas into a fully functional, responsive, no-code SaaS website.</p>
         <div className='flex items-center gap-5 mt-10 md:mt-18'>
           {socialIcons.map((icon: SocialType, i: number) => (
             <a href='#' key={i} className='text-2xl text-[#808080]'>{icon.icon}</a>
@@ -48,7 +48,7 @@ function Footer() {
 
 
       {/* Links */}
-      <div className='text-[#7B7B7B] mt-15 md:grid md:grid-cols-4 md:mt-0 md:gap-35'>
+      <div className='text-[#7B7B7B] mt-15 md:grid md:grid-cols-4 md:mt-0 md:gap-12 lg:gap-18'>
         <div className='flex flex-col gap-4 text-sm'>
           <h3 className='text-white'>Product</h3>
           <Link href="#">Features</Link>
@@ -87,5 +87,3 @@ function Footer() {
     </div>
   )
 }
-
-export default Footer
