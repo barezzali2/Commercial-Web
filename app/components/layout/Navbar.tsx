@@ -1,11 +1,10 @@
-// Navbar.jsx
 "use client"
 import Link from 'next/link';
 import React, { useState } from 'react'
 import { IoClose } from "react-icons/io5";
 import NavButton from '@/app/components/ui/NavButton';
 
-function Navbar() {
+export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     function handleSetMenu() {
@@ -68,6 +67,7 @@ function Navbar() {
 
           <NavButton href='#' className='text-white bg-black inline pt-[10px] pl-[15px] pr-[15px] pb-[10px] rounded-[10px] mr-5'>Get for free</NavButton>
       </div>
+
 
 
       {/* Hamberger button for mobile viewport */}
@@ -167,5 +167,3 @@ function Navbar() {
     </div>
   )
 }
-
-export default Navbar
