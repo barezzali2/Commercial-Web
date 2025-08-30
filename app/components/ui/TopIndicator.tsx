@@ -7,12 +7,10 @@ type IndicatorType = {
 }
 
 
-function TopIndicator({children, className}: IndicatorType) {
+export default function TopIndicator({children, className}: IndicatorType) {
   return (
     <div className={className}>
         {children}
     </div>
   )
 }
-
-export default TopIndicator

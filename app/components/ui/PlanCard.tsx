@@ -10,9 +10,9 @@ type PlanCardProps = {
     buttonText: string;
 }
 
-function PlanCard({ title, price, period = "monthly", features, popular, buttonText}: PlanCardProps) {
+export default function PlanCard({ title, price, period = "monthly", features, popular, buttonText}: PlanCardProps) {
   return (
-    <div className={`rounded-2xl my-5 mx-auto w-[320px] p-12 flex flex-col gap-4 shadow-[0_3px_10px_-2px_rgba(0,0,0,0.2)] ${popular ? "bg-black text-white" : "bg-white text-black"} lg:h-fit`}>
+    <div className={`rounded-2xl my-5 mx-auto w-[320px] p-12 flex flex-col gap-4 shadow-[0_3px_10px_-2px_rgba(0,0,0,0.2)] ${popular ? "bg-black text-white" : "bg-white text-black"} lg:h-fit lg:w-[350px]`}>
         <div>
             <div className='flex flex-row justify-between items-center'>
             <h3 className='text-[#6F6C90] text-xl'>{title}</h3>
@@ -48,5 +48,3 @@ function PlanCard({ title, price, period = "monthly", features, popular, buttonT
     </div>
   )
 }
-
-export default PlanCard

@@ -8,12 +8,10 @@ type LinkType = {
 
 }
 
-function TextLink({ children, href }: LinkType) {
+export default function TextLink({ children, href }: LinkType) {
   return (
     <a href={href}>
         {children} <FaArrowRight className='inline'/>
     </a>
   )
 }
-
-export default TextLink

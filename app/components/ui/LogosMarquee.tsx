@@ -1,11 +1,11 @@
 import React from 'react'
 import Image, { StaticImageData } from 'next/image'
-import acme from "@/public/marquee-logos/acme.png"
-import apex from "@/public/marquee-logos/apex.png"
-import celestia from "@/public/marquee-logos/celestia.png"
-import echo from "@/public/marquee-logos/echo.png"
-import pulse from "@/public/marquee-logos/pulse.png"
-import quantum from "@/public/marquee-logos/quantum.png"
+import acme from "@/public/logos/marquee-logos/acme.png"
+import apex from "@/public/logos/marquee-logos/apex.png"
+import celestia from "@/public/logos/marquee-logos/celestia.png"
+import echo from "@/public/logos/marquee-logos/echo.png"
+import pulse from "@/public/logos/marquee-logos/pulse.png"
+import quantum from "@/public/logos/marquee-logos/quantum.png"
 
 
 const logos: StaticImageData[] = [
@@ -19,7 +19,7 @@ const logos: StaticImageData[] = [
 
 const elements = [...logos, ...logos];
 
-function LogosMarquee() {
+export default function LogosMarquee() {
   return (
     <>
       {elements.map((logo: StaticImageData, i: number) => (
@@ -37,5 +37,3 @@ function LogosMarquee() {
     </>
   )
 }
-
-export default LogosMarquee

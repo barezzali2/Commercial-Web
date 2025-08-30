@@ -8,7 +8,7 @@ type ButtonType = {
     href: string
 }
 
-function NavButton({ children, className, href }: ButtonType) {
+export default function NavButton({ children, className, href }: ButtonType) {
   return (
     <Link 
       href={href} 
@@ -18,5 +18,3 @@ function NavButton({ children, className, href }: ButtonType) {
     </Link>
   )
 }
-
-export default NavButton
