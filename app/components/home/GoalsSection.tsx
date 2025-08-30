@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React, { ReactElement } from 'react'
+import * as motion from "motion/react-client"
 import productImage from "@/public/product-image.png"
 import pyramid from "@/public/pyramid.png"
 import torus from "@/public/torus.png"
@@ -43,7 +44,15 @@ const goals: Goal[] = [
 
 export default function GoalsSection() {
   return (
-    <div className='w-full justify-center bg-gradient-to-b from-[#ffffff] to-[#c8d4ff] pb-5 mt-20 md:mt-30'>
+    <motion.div 
+    className='w-full justify-center bg-gradient-to-b from-[#ffffff] to-[#c8d4ff] pb-5 mt-20 md:mt-30'
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 1.0 }}
+    >
+
+      {/* Top title and description */}
       <div className='text-center'>
         <TopIndicator className='border-2 border-gray-400 inline p-2 rounded-2xl'>Boost your productivity</TopIndicator>
         <h2 className='mt-8 mb-6 text-3xl font-semibold text-balance md:text-4xl'>A more effective way <span className='text-[#001354] block'>to track progress</span></h2>
@@ -51,17 +60,28 @@ export default function GoalsSection() {
       </div>
 
 
-      <div>
+        {/* Images and shapes */}
+        <motion.div
+        animate={{ y: [0, 15, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      >
         <Image 
         src={pyramid} 
         alt='pyramid-img' 
         className='hidden md:block md:absolute md:right-0 md:w-32 lg:w-40 lg:mt-40'
         />
+      </motion.div>
+
+      <motion.div
+        animate={{ y: [0, 15, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      >
         <Image 
         src={torus} 
         alt='torus-img'
-        className='hidden md:block md:absolute md:left-0 md:top-390 md:w-32 lg:w-40 lg:top-450'
+        className='hidden md:block md:absolute md:left-0 md:w-32 lg:w-40 md:mt-50 lg:mt-140'
         />
+      </motion.div>
 
         <Image 
         src={productImage} 
@@ -70,18 +90,26 @@ export default function GoalsSection() {
         sizes="(max-width: 640px) 320px, (max-width: 768px) 400px, (max-width: 1024px) 600px, 800px"
         className='w-full'
         />
-      </div>
+      
 
-        <div className='grid mt-8 mx-auto md:grid-cols-2 md:gap-0 lg:grid-cols-4 lg:mb-10'>
+        {/* Grid items */}
+        <div className='grid mt-8 mx-auto md:grid-cols-2 md:gap-0 lg:grid-cols-4 lg:mb-10 lg:mt-0'>
           {goals.map((goal: Goal, i: number) => (
-            <div key={i} className='m-12'>
+            <motion.div 
+                key={i} 
+                className='m-12'
+                initial={{ opacity: 0, x: 60 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2 }}
+                >
                 <div className='text-2xl mb-[10px]'>{goal.icon}</div>
                 <h4 className='text-xl font-bold mb-[10px]'>{goal.title}</h4>
                 <p className='text-[16px] mb-[12px]'>{goal.description}</p>
                 <TextLink href='#'>Learn more</TextLink>
-            </div>
+            </motion.div>
           ))}
         </div>
-    </div>
+    </motion.div>
   )
 }
