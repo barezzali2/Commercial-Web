@@ -1,12 +1,12 @@
 import React from 'react'
-import Logo from '../ui/Logo'
+import Logo from '@/app/components/ui/Logo'
 import Navbar from './Navbar'
 import { FaArrowRight } from 'react-icons/fa'
 
 
-function Header() {
+export default function Header() {
   return (
-    <div>
+    <>
     <div className='bg-black text-white flex flex-row p-4 justify-center items-center'>
         <a href='#' className='flex items-center justify-center'>View the complete Kit <FaArrowRight className='ml-2'/></a>
     </div>
@@ -17,8 +17,6 @@ function Header() {
             <Navbar />
         </div>
     </header>
-    </div>
+    </>
   )
 }
-
-export default Header
