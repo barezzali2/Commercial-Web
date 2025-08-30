@@ -54,13 +54,13 @@ const plans = [
 
 
 
-function PlansSection() {
+export default function PlansSection() {
   return (
     <div className='w-full mt-30 justify-center'>
       <div className='text-center'>
         <TopIndicator className='border-2 border-gray-400 inline p-2 rounded-2xl'>Boost your productivity</TopIndicator>
         <h2 className='mt-8 mb-6 text-3xl font-semibold text-balance md:text-4xl'>A more effective way <span className='text-[#001354] block'>to track progress</span></h2>
-        <p className='w-full text-xl mb-8 px-9 text-[#010D3E] md:px-30 text-balance'>Effortlessly turn your ideas into a fully functional, responsive, no-code SaaS website in just minutes with the set of free components for Framer.</p>
+        <p className='max-w-2xl mx-auto font-normal text-xl mb-8 text-[#010D3E] text-balance'>Effortlessly turn your ideas into a fully functional, responsive, no-code SaaS website in just minutes with the set of free components for Framer.</p>
       </div>
 
 
@@ -72,6 +72,4 @@ function PlansSection() {
 
     </div>
   )
-}
-
-export default PlansSection
+} 

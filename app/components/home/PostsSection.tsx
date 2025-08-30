@@ -1,14 +1,14 @@
 import React from 'react';
 import TopIndicator from '@/app/components/ui/TopIndicator';
 
-type Post = {
+interface Post {
   userId: number;
   id: number;
   title: string;
   body: string;
 };
 
-async function PostsSection() {
+export default async function PostsSection() {
 
     // Fetching posts data from the API
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -28,13 +28,13 @@ async function PostsSection() {
       </h2>
 
     
-      <div className="mt-5 relative w-full">
+      <div className="mt-5 relative w-full md:mt-8 lg:mt-12">
 
         {/* Top Overlay */}
         <div className="absolute top-0 -left-4 w-screen h-52 bg-gradient-to-b from-white to-transparent z-20 pointer-events-none" />
         
         {/* Bottom Overlay */}
-        <div className="absolute bottom-0 left-0 w-screen h-52 bg-gradient-to-t from-white to-transparent z-20 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-screen h-52 bg-gradient-to-t from-white to-transparent z-20 pointer-events-none lg:h-10" />
         
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10 md:-mx-20">
@@ -42,7 +42,7 @@ async function PostsSection() {
             <div
                 key={post.id}
                 className={`
-                bg-white rounded-xl shadow-md p-6 max-w-[320px] mx-auto 
+                bg-white rounded-xl shadow-md p-6 max-w-[320px] mx-auto h-fit
                 ${index >= 3 ? 'hidden md:block' : ''}`}
             >
                 <h4 className="font-semibold text-lg mb-4">{post.title}</h4>
@@ -56,5 +56,3 @@ async function PostsSection() {
     </div>
   );
 }
-
-export default PostsSection;

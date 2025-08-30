@@ -11,7 +11,7 @@ import Marquee from "react-fast-marquee";
 
 
 
-function HeroSection() {
+export default function HeroSection() {
   return (
     <div className='w-full'>
 
@@ -70,5 +70,3 @@ function HeroSection() {
     </div>
   )
 }
-
-export default HeroSection
