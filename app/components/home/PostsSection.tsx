@@ -13,11 +13,27 @@ interface Post {
 };
 
 
+async function getData() {
+
+  try {
+    // Fetching posts data from the API
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch posts");
+    }
+
+    return res.json();
+
+  }catch(err) {
+    throw err;
+  }
+}
+
+
 export default async function PostsSection() {
 
-    // Fetching posts data from the API
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-  const data: Post[] = await res.json();
+    const data: Post[] = await getData();
   
 
   const randomPosts = data
