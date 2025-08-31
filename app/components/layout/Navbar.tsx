@@ -56,7 +56,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link 
-                href="/"
+                href="/help"
                 className="text-md text-[#00000099] transition-colors hover:text-indigo-700 block py-2"
                 onClick={handleSetMenu}
               >
@@ -153,7 +153,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link 
-                href="/"
+                href="/help"
                 className="text-xl font-semibold text-black transition-colors hover:text-blue-600 block py-2"
                 onClick={handleSetMenu}
               >

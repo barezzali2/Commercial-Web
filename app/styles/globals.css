@@ -11,3 +11,14 @@
 body {
   scroll-behavior: smooth;
 }
+
+
+.spinner {
+    margin: 3.2rem auto 1.6rem;
+    width: 60px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid theme(--color-indigo-600);
+    border-right-color: theme(--color-indigo-300);
+    animation: rotate 1s infinite linear;
+  }
