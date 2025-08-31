@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
-import logo from "@/public/logos/logo.png";
 import Link from 'next/link';
+import logo from "@/public/logos/logo.png";
 
 export default function Logo() {
   return (

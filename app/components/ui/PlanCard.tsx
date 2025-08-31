@@ -1,6 +1,7 @@
 import React from 'react'
 import NavButton from './NavButton';
 
+
 type PlanCardProps = {
     title: string;
     price: string;
@@ -9,6 +10,7 @@ type PlanCardProps = {
     popular?: boolean;
     buttonText: string;
 }
+
 
 export default function PlanCard({ title, price, period = "monthly", features, popular, buttonText}: PlanCardProps) {
   return (

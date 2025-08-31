@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import { FaArrowRight } from 'react-icons/fa';
 
+
 type LinkType = {
     children: ReactNode;
     className?: string;

@@ -1,5 +1,6 @@
 import React from 'react'
 import Image, { StaticImageData } from 'next/image'
+
 import acme from "@/public/logos/marquee-logos/acme.png"
 import apex from "@/public/logos/marquee-logos/apex.png"
 import celestia from "@/public/logos/marquee-logos/celestia.png"
