@@ -38,6 +38,7 @@ export default function ServicesSection() {
         viewport={{ once: true }}
         transition={{ duration: 1.0 }}
         >
+            
         <div className='text-center'>
             <TopIndicator className='border-2 border-gray-400 inline p-2 rounded-2xl'>Everything you need</TopIndicator>
             <h2 className='mt-8 mb-6 text-3xl font-semibold text-balance md:text-4xl'>Streamlined for easy <span className='text-[#001354] block'>management</span></h2>

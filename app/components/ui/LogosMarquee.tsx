@@ -20,6 +20,7 @@ const logos: StaticImageData[] = [
 
 const elements = [...logos, ...logos];
 
+
 export default function LogosMarquee() {
   return (
     <>

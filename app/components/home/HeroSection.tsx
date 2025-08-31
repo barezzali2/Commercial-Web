@@ -46,52 +46,53 @@ export default function HeroSection() {
         transition={{ duration: 1.0 }}
         >
           
-        <motion.div
-            animate={{ y: [0, -15, 0] }}
+          <motion.div
+              animate={{ y: [0, -15, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <Image 
+                  src={cylindar} 
+                  alt='cylindar'
+                  quality={80}
+                  className='hidden md:block md:absolute md:top-0 md:mt-[-50px] md:-left-0 md:w-40 lg:w-45 lg:-left-5 lg:mt-[-20px]'
+              />
+          </motion.div>
+
+
+          <motion.div
+            animate={{ scale: [1, 1.1, 1] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           >
-            <Image 
-                src={cylindar} 
-                alt='cylindar'
-                quality={80}
-                className='hidden md:block md:absolute md:top-0 md:mt-[-50px] md:-left-0 md:w-40 lg:w-45 lg:-left-5 lg:mt-[-20px]'
-            />
-        </motion.div>
+              <Image 
+                  src={visual} 
+                  alt='Visual' 
+                  quality={85}
+                  className='mx-auto w-[388px] md:w-[648px] md:max-w-md lg:max-w-lg'
+              />
+          </motion.div>
 
 
-        <motion.div
-          animate={{ scale: [1, 1.1, 1] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        >
-            <Image 
-                src={visual} 
-                alt='Visual' 
-                quality={85}
-                className='mx-auto w-[388px] md:w-[648px] md:max-w-md lg:max-w-lg'
-            />
-        </motion.div>
-
-
-        <motion.div
-          animate={{ 
-            rotate: [0, 0, 0, -10, 0],  // slow back-and-forth rotation
-            y: [0, -15, 0, 15, 0]       // floating up and down
-          }}
-          transition={{ 
-            duration: 6,
-            repeat: Infinity, 
-            ease: "easeInOut" 
-          }}
-        >
-           <Image 
-              src={halfTorus} 
-              alt='Half-Torus'
-              quality={80}
-              className='hidden lg:block lg:absolute lg:w-45 lg:-bottom-20 lg:right-0'
-          />
-        </motion.div>
+            <motion.div
+              animate={{ 
+                rotate: [0, 0, 0, -10, 0],  // slow back-and-forth rotation
+                y: [0, -15, 0, 15, 0]       // floating up and down
+              }}
+              transition={{ 
+                duration: 6,
+                repeat: Infinity, 
+                ease: "easeInOut" 
+              }}
+            >
+              <Image 
+                  src={halfTorus} 
+                  alt='Half-Torus'
+                  quality={80}
+                  className='hidden lg:block lg:absolute lg:w-45 lg:-bottom-20 lg:right-0'
+              />
+            </motion.div>
 
         </motion.div>
+
       </motion.div>
       
 

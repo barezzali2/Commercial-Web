@@ -66,6 +66,7 @@ export default function PlansSection() {
       viewport={{ once: true }}
       transition={{ duration: 1.0 }}
     >
+
       <div className='text-center'>
         <TopIndicator className='border-2 border-gray-400 inline p-2 rounded-2xl'>Boost your productivity</TopIndicator>
         <h2 className='mt-8 mb-6 text-3xl font-semibold text-balance md:text-4xl'>A more effective way <span className='text-[#001354] block'>to track progress</span></h2>
@@ -81,9 +82,9 @@ export default function PlansSection() {
         viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 1.0 }}
         >
-        {plans.map((plan, i) => (
-          <PlanCard {...plan} key={i} />
-        ))}
+          {plans.map((plan, i) => (
+            <PlanCard {...plan} key={i} />
+          ))}
       </motion.div>
 
     </motion.div>
