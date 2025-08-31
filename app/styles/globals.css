@@ -2,6 +2,12 @@
 @import "tailwindcss";
 
 
+
 * {
   font-family: "Lexend Deca";
+}
+
+
+body {
+  scroll-behavior: smooth;
 }
