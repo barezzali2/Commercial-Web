@@ -1,8 +1,11 @@
 import React from 'react'
-import TopIndicator from '../ui/TopIndicator'
-import PlanCard from '../ui/PlanCard'
+import * as motion from "motion/react-client"
+import TopIndicator from '@/app/components/ui/TopIndicator'
+import PlanCard from '@/app/components/ui/PlanCard'
 
 
+
+// An array of plan items
 const plans = [
   {
     title: "Free",
@@ -56,7 +59,13 @@ const plans = [
 
 export default function PlansSection() {
   return (
-    <div className='w-full mt-30 justify-center'>
+    <motion.div
+      className='w-full mt-30 justify-center'
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1.0 }}
+    >
       <div className='text-center'>
         <TopIndicator className='border-2 border-gray-400 inline p-2 rounded-2xl'>Boost your productivity</TopIndicator>
         <h2 className='mt-8 mb-6 text-3xl font-semibold text-balance md:text-4xl'>A more effective way <span className='text-[#001354] block'>to track progress</span></h2>
@@ -64,12 +73,19 @@ export default function PlansSection() {
       </div>
 
 
-      <div className='grid grid-cols-1 md:mt-10 lg:grid-cols-3 items-end'>
+      {/* Iterating through the array and calling card component */}
+      <motion.div 
+        className='grid grid-cols-1 md:mt-10 lg:grid-cols-3 items-end'
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 1.0 }}
+        >
         {plans.map((plan, i) => (
           <PlanCard {...plan} key={i} />
         ))}
-      </div>
+      </motion.div>
 
-    </div>
+    </motion.div>
   )
 } 
