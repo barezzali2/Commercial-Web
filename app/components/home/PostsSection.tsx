@@ -18,6 +18,7 @@ export default async function PostsSection() {
     // Fetching posts data from the API
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
   const data: Post[] = await res.json();
+  
 
   const randomPosts = data
     .sort(() => Math.random() - 0.5)
