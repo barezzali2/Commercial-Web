@@ -1,16 +1,19 @@
-import Image from 'next/image'
 import React, { ReactElement } from 'react'
+import Image from 'next/image'
 import * as motion from "motion/react-client"
+
 import productImage from "@/public/product-image.png"
 import pyramid from "@/public/pyramid.png"
 import torus from "@/public/torus.png"
+
 import { LuLeaf } from "react-icons/lu";
 import { GoGoal } from "react-icons/go";
 import { MdLockOutline } from "react-icons/md";
 import { IoNotificationsOutline } from "react-icons/io5";
-import { FaArrowRight } from 'react-icons/fa';
+
 import TopIndicator from '@/app/components/ui/TopIndicator';
 import TextLink from '@/app/components/ui/TextLink'
+
 
 
 type Goal = {
@@ -62,7 +65,7 @@ export default function GoalsSection() {
 
         {/* Images and shapes */}
         <motion.div
-        animate={{ y: [0, 15, 0] }}
+        animate={{ y: [0, 20, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       >
         <Image 
@@ -73,7 +76,7 @@ export default function GoalsSection() {
       </motion.div>
 
       <motion.div
-        animate={{ y: [0, 15, 0] }}
+        animate={{ y: [0, 20, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       >
         <Image 
@@ -86,14 +89,14 @@ export default function GoalsSection() {
         <Image 
         src={productImage} 
         alt='product-image' 
-        quality={85}
+        quality={90}
         sizes="(max-width: 640px) 320px, (max-width: 768px) 400px, (max-width: 1024px) 600px, 800px"
         className='w-full'
         />
       
 
         {/* Grid items */}
-        <div className='grid mt-8 mx-auto md:grid-cols-2 md:gap-0 lg:grid-cols-4 lg:mb-10 lg:mt-0'>
+        <div className='grid overflow-hidden mt-8 mx-auto md:grid-cols-2 md:gap-0 lg:grid-cols-4 lg:mb-10 lg:mt-0'>
           {goals.map((goal: Goal, i: number) => (
             <motion.div 
                 key={i} 
