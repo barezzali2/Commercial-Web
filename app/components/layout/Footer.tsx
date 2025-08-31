@@ -1,7 +1,9 @@
 import React, { ReactElement } from 'react'
-import Logo from '../ui/Logo'
-import { FaInstagramSquare, FaTwitter, FaPinterest, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
 import Link from 'next/link';
+
+import { FaInstagramSquare, FaTwitter, FaPinterest, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
+import Logo from '@/app/components/ui/Logo'
+
 
 
 type SocialType = {

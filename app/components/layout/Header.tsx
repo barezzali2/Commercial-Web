@@ -1,7 +1,7 @@
 import React from 'react'
 import Logo from '@/app/components/ui/Logo'
-import Navbar from './Navbar'
 import { FaArrowRight } from 'react-icons/fa'
+import Navbar from './Navbar'
 
 
 export default function Header() {
